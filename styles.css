@@ -8,9 +8,8 @@ body {
   .grid-container {
     display: grid;
     grid-template-areas:
-      "daniel daniel jonathan"
-      "jeanette patrick jonathan"
-      "kira kira kira";
+      "daniel jonathan kira"
+      "jeanette patrick kira";
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
@@ -36,9 +35,17 @@ body {
   }
   
   .card .quote {
-    color: rgba(255, 255, 255, 0.85);
     font-style: italic;
   }
+  
+  .light .quote {
+    color: hsl(217, 19%, 35%);
+  }
+  
+  .card:not(.light) .quote {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  
   
   .user {
     display: grid;
@@ -70,7 +77,10 @@ body {
   .jonathan { grid-area: jonathan; }
   .jeanette { grid-area: jeanette; }
   .patrick { grid-area: patrick; }
-  .kira { grid-area: kira; }
+  .kira { 
+    grid-area: kira;
+    grid-row: span 2;
+  }
   
   /* Color Schemes */
   .purple {
